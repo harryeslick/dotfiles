@@ -20,4 +20,4 @@ vizshl () {
 }
 
 eval "$(gh completion -s zsh)"
-
+eval "$(starship init zsh)"

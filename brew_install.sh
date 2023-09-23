@@ -53,13 +53,16 @@ PACKAGES=(
     ack
     tmux
     the_silver_searcher
-    bat
     macvim
     mysql
     fzf
     ctags
-    wget
     openssh
+    starship
+    bat
+    ripgrep
+    exa
+
 )
 
 echo "Install packages"
@@ -101,3 +104,4 @@ jupyter labextension install jupyterlab-plotly@4.14.1
 jupyter labextension install @jupyter-widgets/jupyterlab-manager plotlywidget@4.14.1
 jupyter labextension install @jupyter-widgets/jupyterlab-manager
 jupyter labextension install jupyter-matplotlib
+
