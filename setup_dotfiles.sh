@@ -15,8 +15,8 @@ if [[ $? = 0 ]]; then
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
   fi
-  if [[ -f ~/.zshrc.local ]]; then
-    echo "source ~/.zshrc.local" >> ~/.zshrc
+  if [[ -f ~/.zshrc.public ]]; then
+    echo "source ~/.zshrc.public" >> ~/.zshrc
   fi
   if [[ -f ~/.zsh_profile ]]; then
     grep -q 'source ~/.zshrc' ~/.zsh_profile 2>&1 || echo "source ~/.zshrc" >> ~/.zsh_profile;
@@ -24,7 +24,7 @@ if [[ $? = 0 ]]; then
     echo "Creating '.zsh_profile'..."
     echo "source ~/.zshrc" >> ~/.zsh_profile
   fi
-  . ~/.bashrc
+  . ~/.zshrc
 
   [[ -z $NAME  ]] && read -e -p "Enter your name (for git configuration): " NAME
   [[ -z $EMAIL ]] && read -e -p "Enter your email (for git configuration): " EMAIL
@@ -32,7 +32,10 @@ if [[ $? = 0 ]]; then
   [[ $EMAIL ]] && git config --global user.email "$EMAIL"
   git config --global credential.helper cache
   git config --global credential.helper 'cache --timeout=3600'
-
+  
+  # get .gitconfig to include public settings from ~/.gitconfig.public
+  echo "[include]" >> ~/.gitconfig
+  echo "  path = ~/.gitconfig.public" >> ~/.gitconfig
   cd -
 else
   echo "Error with dotfiles checkout, see above and retry."
