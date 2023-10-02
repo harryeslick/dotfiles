@@ -1,0 +1,11 @@
+commit () { git commit -am "${1}" && git push; }
+fixes () { git commit -am "fixes #${1}" && git push; }
+
+alias issues="gh issue list"
+alias issue="gh issue create"
+alias enhancement="gh issue create -l enhancement -b '' -t"
+alias bug="gh issue create -l bug -b '' -t"
+alias breaking="gh issue create -l breaking -b '' -t"
+alias note="gh issue -R he00/notes create"
+
+# alias gitssh="perl -pi -e 's#https://github\.com/#git\@github.com:# if /\[remote \"origin/../fetch =/' .git/config"
