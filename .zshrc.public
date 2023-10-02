@@ -1,0 +1,20 @@
+
+
+[ -f ~/.zsh_aliases ] && . ~/.zsh_aliases
+[ -f ~/.zsh_secrets ] && . ~/.zsh_secrets
+
+alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
+vizsh () {
+  vim ~/.zshrc
+  . ~/.zshrc
+}
+
+vizshl () {
+  vim ~/.zshrc.local
+  . ~/.zshrc
+}
+
+#eval "$(gh completion -s zsh)"

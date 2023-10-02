@@ -20,12 +20,12 @@ function cask_install_or_upgrade {
   if brew ls --versions "$1" >/dev/null; then
     if (brew outdated | grep "$1" > /dev/null); then
       echo "Upgrading already installed package $1 ..."
-      brew cask upgrade "$1"
+      brew upgrade --cask "$1"
     else
       echo "Latest $1 is already installed"
     fi
   else
-    brew cask install "$1"
+    brew install --cask "$1"
   fi
 }
 
@@ -39,8 +39,6 @@ PACKAGES=(
     node
     zsh-autosuggestions
     zsh-syntax-highlighting
-	  gnupg2
-	  pinentry-mac
     dockutil
     howdoi
     espanso
@@ -53,7 +51,6 @@ PACKAGES=(
     ack
     tmux
     the_silver_searcher
-    macvim
     mysql
     fzf
     ctags
@@ -66,42 +63,37 @@ PACKAGES=(
 )
 
 echo "Install packages"
-for i in "${PACKAGES[@]}"; brew_install_or_upgrade "$i"
-
+for i in "${PACKAGES[@]}"
+do
+ brew_install_or_upgrade $i
+done
 
 
 echo "Installing casks..."
 CASKS=(
-	zotero
-	# google-earth
-  # emacs
-  iterm2
-  # dropbox
-  # google-chrome
-  # visual-studio-code
-  qgis
-  espanso
-  maccy
-  rectangle
-  RStudio
+    zotero
+    iterm2
+    visual-studio-code
+    qgis
+    espanso
+    maccy
+    rectangle
+    RStudio
 
 )
 echo "Installing cask apps..."
 brew tap homebrew/cask-versions
-for i in "${CASKS[@]}"; cask_install_or_upgrade "$i"
-
+for i in "${CASKS[@]}"
+do 
+  cask_install_or_upgrade "$i"
+done
 
 echo "Cleaning up..."
 brew cleanup
 
 echo "Brew install setup completed!"
 
-echo "setup base conda environment"
-conda install jupyterlab ipykernal
+echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 
-echo "installing jupyterlab extensions"
-jupyter labextension install jupyterlab-plotly@4.14.1
-jupyter labextension install @jupyter-widgets/jupyterlab-manager plotlywidget@4.14.1
-jupyter labextension install @jupyter-widgets/jupyterlab-manager
-jupyter labextension install jupyter-matplotlib
+
 

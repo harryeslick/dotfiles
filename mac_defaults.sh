@@ -1,4 +1,4 @@
-COMPUTER_NAME="hmac"
+COMPUTER_NAME="hfis"
 
 osascript -e 'tell application "System Preferences" to quit'
 

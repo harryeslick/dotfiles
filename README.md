@@ -2,22 +2,43 @@ I suggest you create a fork of this, so you can modify it.
 
 The approach used here is from https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
 
-To set this up on your machine, use this script `setup_dotfiles.sh`
-
-In that script, change `https://github.com/harryeslick/dotfiles-ai.git` to your fork, before you run it.
 
 
-#-------------- Installing MacOS packages. 
-Install homebrew
+# Install `xcode-select` to get 'git'
+`xcode-select --install`
 
-	`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
+# Install homebrew #https://brew.sh
+
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Setup the base `config` repo to manage dotfiles
+To set this up on your machine, use the script `setup_dotfiles.sh` within this repo.   
+or run:   
+`curl -Lks https://raw.githubusercontent.com/harryeslick/dotfiles/master/setup_dotfiles.sh | /bin/bash`
+
+This will   
+* git clone the dotfiles repository. 
+* setup the git mechanics to source control selected dotfiles using `config` command
 
 
-The Xcode Command Line Tools includes `git` and `make` (not available on stock macOS).
-Then, install this repo with `curl` available:
+# Installing MacOS packages. 
 
-    `bash -c "`curl -fsSL https://raw.githubusercontent.com/webpro/dotfiles/master/remote-install.sh`"`
+Install brew packages and casks: `bash brew_install.sh`  
+Update MacOS default settings: `bash mac_defaults.sh`  
+Install conda/mamba: `bash mamba_install.sh`  
+setup the macOS dock: `bash mac_dock.sh`  
 
-This will clone (using `git`), or download (using `curl` or `wget`), this repo to `~/.dotfiles`. Alternatively, clone manually into the desired location:
+
+# Updating dotfiles
+After you've executed the setup any file within the $HOME folder can be versioned with normal commands, replacing git with your newly created config alias, like:
+```
+config status
+config add .vimrc
+config commit -m "Add vimrc"
+config add .bashrc
+config commit -m "Add bashrc"
+config push
+```
+
 
 
