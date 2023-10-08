@@ -34,7 +34,7 @@ conf () {
       config add $2
       ;;
     update)
-      config update $2
+      config commit -a -m "Commit {date -I}"
       ;;
     ls)
       echo "running: config ls-files"
