@@ -38,13 +38,12 @@ After you've executed the setup any file within the $HOME folder can be versione
 config status
 config add .vimrc
 config commit -m "Add vimrc"
-config add .bashrc
-config commit -m "Add bashrc"
-config push
 ```
-
-TODO
-* startship config
-  * nerdfond install
-* Obsidian notes
-* 
+.zsh_aliases defines u function to help
+```
+conf help
+conf ls
+conf add
+conf update
+conf rm
+```

@@ -23,6 +23,8 @@ conf () {
       echo "  help    Show this help message"
       echo "  ls list all tracked files"
       echo "  rm remove a file from git tracking, without deleting from disk"
+      echo "  add add a file to git tracking"
+      echo "  update commit all changes to all tracked files and push to remote"
       ;;
     rm)
       echo "running: config rm --cached $2"
@@ -34,7 +36,8 @@ conf () {
       config add $2
       ;;
     update)
-      config commit -a -m "Commit {date -I}"
+      config commit -a -m "Commit current changes"
+      config push
       ;;
     ls)
       echo "running: config ls-files"
