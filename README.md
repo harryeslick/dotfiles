@@ -19,6 +19,8 @@ or run:
 This will   
 * git clone the dotfiles repository. 
 * setup the git mechanics to source control selected dotfiles using `config` command
+* config files containing private data should not be commited
+	* to prevent details leaking from .gitconfig or .zshrc, these repos are not tracked. an explicit .gitconfig.public and .zshrc.public are used and sourced in actual .zshrc...
 
 
 # Installing MacOS packages. 
@@ -27,6 +29,7 @@ Install brew packages and casks: `bash brew_install.sh`
 Update MacOS default settings: `bash mac_defaults.sh`  
 Install conda/mamba: `bash mamba_install.sh`  
 setup the macOS dock: `bash mac_dock.sh`  
+
 
 
 # Updating dotfiles
@@ -40,5 +43,8 @@ config commit -m "Add bashrc"
 config push
 ```
 
-
-
+TODO
+* startship config
+  * nerdfond install
+* Obsidian notes
+* 

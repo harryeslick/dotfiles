@@ -1,7 +1,5 @@
 
 
-[ -f ~/.zsh_aliases ] && . ~/.zsh_aliases
-[ -f ~/.zsh_secrets ] && . ~/.zsh_secrets
 
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 export VISUAL=vim
@@ -16,5 +14,10 @@ vizshl () {
   vim ~/.zshrc.local
   . ~/.zshrc
 }
+export PATH=$PATH:$CONDA_PREFIX/lib/R
+
 
 #eval "$(gh completion -s zsh)"
+
+source ~/.zsh_aliases
+[ -f ~/.zsh_secrets ] && . ~/.zsh_secrets
