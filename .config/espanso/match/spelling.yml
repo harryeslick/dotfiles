@@ -1,0 +1,7 @@
+matches:
+  - trigger: "legnth"
+    replace: "length"
+    propagate_case: true
+    word: true
+
+

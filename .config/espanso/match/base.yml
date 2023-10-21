@@ -12,6 +12,22 @@ matches:
   - trigger: ":espanso"
     replace: "Hi there!"
 
+  - trigger: ":trigger"
+    replace: |
+      - trigger: ":trigger"
+        replace: "replacement"
+
+  - trigger: "p--"
+    replace: "# ---- $|$ ----"
+
+  - trigger: "p=="
+    replace: |
+      # ----------------------------------------------------------------------------
+      # ---- $|$ ----
+
+  - trigger: ":td"
+    replace: "# TODO"
+
 
   # NOTE: espanso uses YAML to define matches, so pay attention to the indentation!
 

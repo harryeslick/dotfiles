@@ -39,7 +39,7 @@ config status
 config add .vimrc
 config commit -m "Add vimrc"
 ```
-.zsh_aliases defines u function to help
+.zsh_aliases defines a function to help
 ```
 conf help
 conf ls

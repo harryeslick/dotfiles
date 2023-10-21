@@ -60,7 +60,8 @@ PACKAGES=(
     exa
     gh
     tldr
-    
+    micro
+
 
 )
 
@@ -72,7 +73,7 @@ done
 
 
 echo "Installing casks..."
-brew tap homebrew/cask-fonts  
+brew tap homebrew/cask-fonts
 CASKS=(
     zotero
     iterm2
@@ -85,6 +86,7 @@ CASKS=(
     obsidian
     font-hasklug-nerd-font
     font-caskaydia-cove-nerd-font
+    font-jetbrains-mono-nerd-font
 
 
 )
@@ -92,7 +94,7 @@ CASKS=(
 echo "Installing cask apps..."
 brew tap homebrew/cask-versions
 for i in "${CASKS[@]}"
-do 
+do
   cask_install_or_upgrade "$i"
 done
 
@@ -109,6 +111,8 @@ echo "Brew install setup completed!"
 
 
 echo 'eval "$(starship init zsh)"' >> ~/.zshrc
+echo 'eval "$(gh completion -s zsh)"' >> ~/.zshrc
+echo 'export STARSHIP_CONFIG=~/.config/starship.toml' >> ~/.zshrc
 
 
 

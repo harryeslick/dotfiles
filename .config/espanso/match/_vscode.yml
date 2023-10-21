@@ -1,0 +1,5 @@
+matches:
+  - trigger: ":ld"
+    replace: "devtools::load_all()"
+  - trigger: ":doc"
+    replace: "devtools::document()"
