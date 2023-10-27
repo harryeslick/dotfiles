@@ -3,3 +3,5 @@ matches:
     replace: "devtools::load_all()"
   - trigger: ":doc"
     replace: "devtools::document()"
+  - trigger: ":q"
+    replace: "q('no')"

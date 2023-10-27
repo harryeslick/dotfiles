@@ -61,6 +61,7 @@ if (!requireNamespace("colorout", quietly=TRUE)) {
       # _ {data.table} ---------------------------------
       #
 
+      colorout::addPattern('[+]*:',  '\x1b[38;2;143;188;187m')  # Row num
       colorout::addPattern('[0-9]*:',  '\x1b[38;2;143;188;187m')  # Row num
       colorout::addPattern('---',      '\x1b[38;2;76;86;106m')  # Row splitter
       colorout::addPattern('<[a-z]*>', '\x1b[38;2;143;188;187m')  # Col class

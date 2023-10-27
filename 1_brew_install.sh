@@ -39,7 +39,6 @@ PACKAGES=(
     node
     zsh-autosuggestions
     zsh-syntax-highlighting
-    dockutil
     howdoi
     espanso
     midnight-commander
@@ -61,6 +60,7 @@ PACKAGES=(
     gh
     tldr
     micro
+    pandoc
 
 
 )
@@ -113,6 +113,5 @@ echo "Brew install setup completed!"
 echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 echo 'eval "$(gh completion -s zsh)"' >> ~/.zshrc
 echo 'export STARSHIP_CONFIG=~/.config/starship.toml' >> ~/.zshrc
-
-
-
+echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
