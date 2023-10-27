@@ -109,9 +109,9 @@ brew install --cask font-Hasklig-nerd-font
 echo "Brew install setup completed!"
 
 
-
+echo "Configuring installed packages... ----------------------------------"
 echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 echo 'eval "$(gh completion -s zsh)"' >> ~/.zshrc
 echo 'export STARSHIP_CONFIG=~/.config/starship.toml' >> ~/.zshrc
 echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+echo "source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> $HOME/.zshrc
