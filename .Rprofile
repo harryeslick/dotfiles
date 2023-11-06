@@ -3,6 +3,9 @@ cat("LIBPATHS = ", .libPaths(), "\n")
 cat("R.home() = ", R.home(), "\n")
 cat("pwd = ", getwd(), "\n")
 
+# set path to homebrew for pandoc et al.
+Sys.setenv(PATH = paste("/opt/homebrew/bin", Sys.getenv("PATH"), sep = ":"))
+
 
 options(
   # # scientific notation -----

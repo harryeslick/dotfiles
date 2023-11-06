@@ -4,4 +4,7 @@ matches:
     propagate_case: true
     word: true
 
-
+  - trigger: "defualt"
+    replace: "default"
+    propagate_case: true
+    word: true
