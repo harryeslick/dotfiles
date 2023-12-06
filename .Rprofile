@@ -13,7 +13,6 @@ if (interactive()) {
 options(
   # consol width
   width = 120,
-  styler.addins_style_transformer = "grkstyle::grk_style_transformer()",
   # # scientific notation -----
   # "scipen" = 100L,
   # #"digits" = 4L,
