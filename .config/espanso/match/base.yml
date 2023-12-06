@@ -9,8 +9,6 @@
 # it gets replaced by the "replace" string.
 matches:
   # Simple text replacement
-  - trigger: ":espanso"
-    replace: "Hi there!"
 
   - trigger: ":trigger"
     replace: |
@@ -68,6 +66,9 @@ matches:
         type: date
         params:
           format: "%y%m%d"
+
+  - trigger: ":espanso"
+    replace: "code /Users/hfsi/.config/espanso"
 
   # Print the output of a shell command
   - trigger: ":shell"

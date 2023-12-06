@@ -6,14 +6,20 @@ cat("pwd = ", getwd(), "\n")
 # set path to homebrew for pandoc et al.
 Sys.setenv(PATH = paste("/opt/homebrew/bin", Sys.getenv("PATH"), sep = ":"))
 
+if (interactive()) {
+  require(usethis, quietly = TRUE)
+}
 
 options(
+  # consol width
+  width = 120,
+  styler.addins_style_transformer = "grkstyle::grk_style_transformer()",
   # # scientific notation -----
   # "scipen" = 100L,
   # #"digits" = 4L,
 
   # install packages faster -----
-  Ncpus = 4L,
+  Ncpus = 8L,
 
   # usethis setup -----
   usethis.name = "Harry Eslick",
