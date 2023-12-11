@@ -75,18 +75,19 @@ done
 echo "Installing casks..."
 brew tap homebrew/cask-fonts
 CASKS=(
-    zotero
-    iterm2
-    visual-studio-code
-    qgis
     espanso
-    maccy
-    rectangle
-    RStudio
-    obsidian
     font-hasklug-nerd-font
     font-caskaydia-cove-nerd-font
     font-jetbrains-mono-nerd-font
+    iterm2
+    maccy
+    obsidian
+    rectangle
+    RStudio
+    visual-studio-code
+    qgis
+    quarto
+    zotero
 
 
 )
