@@ -8,7 +8,7 @@ indent_size = 2
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[{*.R, *.Rmd}]
+[{*.r, *.R, *.Rmd}]
 indent_style = space
 indent_size = 4
 quote_type = single
@@ -22,7 +22,7 @@ indent_style = space
 indent_size = 4
 max_line_length = 120
 
-[*.md]
+[{*.md, *.qmd, *.Rmd}]
 max_line_length = off
 trim_trailing_whitespace = false
 
