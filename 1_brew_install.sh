@@ -61,6 +61,8 @@ PACKAGES=(
     tldr
     micro
     pandoc
+    neofetch
+    rclone
 
 
 )
@@ -109,6 +111,8 @@ brew install --cask font-Hasklig-nerd-font
 
 echo "Brew install setup completed!"
 
+echo "Intalling Kitty terminal"
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 
 echo "Configuring installed packages... ----------------------------------"
 echo 'eval "$(starship init zsh)"' >> ~/.zshrc

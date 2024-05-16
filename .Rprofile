@@ -13,6 +13,34 @@ Sys.setenv(PATH = paste("/opt/homebrew/bin", Sys.getenv("PATH"), sep = ":"))
 #   source(file.path(Sys.getenv(if (.Platform$OS.type == "windows") "USERPROFILE" else "HOME"), ".vscode-R", "init.R"))
 # }
 
+## https://kevinushey.github.io/blog/2015/02/02/rprofile-essentials/
+options(useFancyQuotes = FALSE)
+
+
+# autofill package names
+utils::rc.settings(ipck = TRUE)
+
+# reduce default size of print to 100 lines
+options(max.print = 100)
+
+
+# warn on partial matches [ ] re-enable if auto_test still stops on errors
+options(
+  warnPartialMatchAttr = TRUE,
+  warnPartialMatchDollar = TRUE,
+  warnPartialMatchArgs = TRUE
+)
+
+## https://www.r-bloggers.com/fun-with-rprofile-and-customizing-r-startup/
+
+# increase width of prompt if waiting for closing parenthesis
+options(prompt = "> ")
+options(continue = "... ")
+options(assign = "<-")
+
+
+
+
 options(
   # consol width
   width = 140,

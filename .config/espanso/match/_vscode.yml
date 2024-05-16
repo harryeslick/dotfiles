@@ -39,5 +39,8 @@ matches:
   - trigger: ":<<"
     replace: " <<- "
 
+  - trigger: ":v"
+    replace: "View($|$)"
+
 
 

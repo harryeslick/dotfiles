@@ -76,13 +76,6 @@ matches:
         params:
           format: "%y%m%d"
 
-  - trigger: ":`"
-    replace: |
-      ```{r}
-      $|$
-
-      ```
-
   - trigger: ":espanso"
     replace: "code /Users/hfsi/.config/espanso"
 
@@ -110,5 +103,26 @@ matches:
           cmd: "echo 'Hello from your shell'"
 
 
+  # Obsidian
+  - trigger: ":hl"
+    replace: "highlight::"
+
+  - trigger: ":DPIRD"
+    replace: "Department of Primary Industries and Regional Development"
+
+
 
   # And much more! For more information, visit the docs: https://espanso.org/docs/
+# Markdown blocks with syntax highlighting
+  - trigger: ":`js"
+    replace: "```javascript\n$|$\n```"
+  - trigger: ":`y"
+    replace: "```yaml\n$|$\n```"
+  - trigger: ":`r"
+    replace: "```r\n$|$\n```"
+  - trigger: ":`p"
+    replace: "```python\n$|$\n```"
+  - trigger: ":`b"
+    replace: "```bash\n$|$\n```"
+  - trigger: ":``"
+    replace: "```{r}\n$|$\n```"
