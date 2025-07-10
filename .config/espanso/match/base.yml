@@ -15,13 +15,6 @@ matches:
       - trigger: ":trigger"
         replace: "replacement"
 
-  - trigger: "p--"
-    replace: "# ---- $|$ ----"
-
-  - trigger: "p=="
-    replace: |
-      # ----------------------------------------------------------------------------
-      # ---- $|$ ----
 
   - trigger: ":td"
     replace: "# TODO"
@@ -103,26 +96,21 @@ matches:
           cmd: "echo 'Hello from your shell'"
 
 
-  # Obsidian
-  - trigger: ":hl"
-    replace: "highlight::"
-
-  - trigger: ":DPIRD"
-    replace: "Department of Primary Industries and Regional Development"
-
-
-
   # And much more! For more information, visit the docs: https://espanso.org/docs/
-# Markdown blocks with syntax highlighting
+  # Markdown blocks with syntax highlighting
   - trigger: ":`js"
     replace: "```javascript\n$|$\n```"
   - trigger: ":`y"
     replace: "```yaml\n$|$\n```"
   - trigger: ":`r"
-    replace: "```r\n$|$\n```"
+    replace: "```{r}\n$|$\n```"
   - trigger: ":`p"
     replace: "```python\n$|$\n```"
   - trigger: ":`b"
     replace: "```bash\n$|$\n```"
   - trigger: ":``"
-    replace: "```{r}\n$|$\n```"
+    replace: "```python\n$|$\n```"
+
+  - trigger: ":rich"
+    replace: "from rich import pretty; pretty.install()"
+

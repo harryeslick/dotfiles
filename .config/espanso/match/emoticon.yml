@@ -1,0 +1,20 @@
+matches:
+  # Simple text replacement
+
+  - trigger: ":shrug"
+    replace: ¯\_(ツ)_/¯
+
+  - trigger: ":angry"
+    replace: ಠ_ಠ
+
+  - trigger: ":flip"
+    replace: (╯°□°）╯︵ ┻━┻
+
+  - trigger: ":cat"
+    replace: (=^ェ^=)
+
+  - trigger: ":high"
+    replace: ヘ( ^o^)ノ＼(^_^ )
+
+  - trigger: ":wtf"
+    replace: ☉_☉

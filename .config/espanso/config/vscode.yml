@@ -1,0 +1,5 @@
+filter_exec: "Code"
+
+extra_includes:
+  - "../match/_vscode.yml"
+  - "../match/_vscode_R.yml"

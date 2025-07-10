@@ -1,0 +1,43 @@
+matches:
+# R
+  - trigger: ":q"
+    replace: "q('no')"
+
+  - trigger: ":ld"
+    replace: "devtools::load_all()"
+
+  - trigger: ":doc"
+    replace: "devtools::document()"
+
+  - trigger: ":ts"
+    replace: "devtools::test()"
+
+  - trigger: ":readme"
+    replace: "devtools::build_readme()"
+
+  - trigger: ":check"
+    replace: "devtools::check()"
+
+  - trigger: ":lib"
+    replace: "library( $|$ )"
+
+  - trigger: ":rev"
+    replace: "testthat::snapshot_review()"
+
+  - trigger: ":recover"
+    replace: "options(error = recover)"
+
+  - trigger: ":ic"
+    replace: "icecream::ic($|$)"
+
+  - trigger: ":run"
+    replace: "devtools::load_all(); run_app()"
+
+  - trigger: ":<"
+    replace: " <- "
+
+  - trigger: ":<<"
+    replace: " <<- "
+
+  - trigger: ":v"
+    replace: "View($|$)"

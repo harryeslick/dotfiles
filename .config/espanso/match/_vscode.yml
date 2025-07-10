@@ -1,46 +1,70 @@
 matches:
 
-  - trigger: ":q"
-    replace: "q('no')"
+  - trigger: "p--"
+    replace: "# %% $|$\t\t\t\t\t\t\t\t\t\t |"
 
-  - trigger: ":ld"
-    replace: "devtools::load_all()"
+  - trigger: ":md"
+    replace: |
+      # %% [markdown]
+      # # $|$
+      #
 
-  - trigger: ":doc"
-    replace: "devtools::document()"
+  - trigger: "p=="
+    replace: |
+      # ----------------------------------------------------------------------------
+      # %% ---- $|$ ----
+#pymc
+  - trigger: ":draw"
+    replace: |
+      import pymc as pm
+      import seaborn as sns
+      sns.displot(pm.draw(
+          pm.Normal.dist(),
+          10_000),kind="kde")
 
-  - trigger: ":ts"
-    replace: "devtools::test()"
-
-  - trigger: ":readme"
-    replace: "devtools::build_readme()"
-
-  - trigger: ":check"
-    replace: "devtools::check()"
-
-  - trigger: ":lib"
-    replace: "library( $|$ )"
-
-  - trigger: ":rev"
-    replace: "testthat::snapshot_review()"
-
-  - trigger: ":recover"
-    replace: "options(error = recover)"
-
-  - trigger: ":ic"
-    replace: "icecream::ic($|$)"
-
-  - trigger: ":run"
-    replace: "devtools::load_all(); run_app()"
-
-  - trigger: ":<"
-    replace: " <- "
-
-  - trigger: ":<<"
-    replace: " <<- "
-
-  - trigger: ":v"
-    replace: "View($|$)"
+  - trigger: ":dot"
+    replace: |
+      import os
+      os.environ["PATH"] += os.pathsep + "/opt/homebrew/bin"
 
 
+  - trigger: ":inspect"
+    replace: "from rich import inspect; inspect($|$, methods=True)"
 
+
+  - trigger: ":plt"
+    replace: "import numpy as np\nimport matplotlib.pyplot as plt"
+
+  - trigger: ":plot"
+    replace: |
+      # %% plot
+      def f(x):
+          return np.sin(x)  # Example: sine function
+
+      # Generate values
+      x = np.linspace(0, 10, 100)
+      y = f(x)
+
+      # Create a figure and axis using plt.subplots()
+      fig, ax = plt.subplots()
+      ax.plot(x, y)
+
+      # Add labels, title, and grid
+      ax.set_xlabel('x')
+      ax.set_ylabel('f(x)')
+      ax.set_title('Plot of f(x) = sin(x)')
+      ax.grid(True)
+
+      # Show the plot
+      plt.show()
+      # %% -----
+
+  - trigger: ":plta"
+    replace: |
+      ax.set_xlabel('x')
+      ax.set_ylabel('f(x)')
+      ax.set_title('Plot of f(x) = sin(x)')
+      ax.grid(True)
+
+      # Show the plot
+      plt.show()

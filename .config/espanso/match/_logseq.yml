@@ -1,0 +1,15 @@
+matches:
+  - trigger: ":shut"
+    replace: |
+
+  - trigger: ":pin"
+    replace: "#📌"
+
+  - trigger: ":idea"
+    replace: "#💡"
+
+  - trigger: ":q"
+    replace: "#🙋‍♂️❓"
+
+  - trigger: ":td"
+    replace: "#to_do"

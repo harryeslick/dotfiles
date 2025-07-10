@@ -1,0 +1,4 @@
+filter_exec: "Logseq"
+
+extra_includes:
+  - "../match/_logseq.yml"

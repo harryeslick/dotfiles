@@ -36,35 +36,46 @@ brew update
 brew doctor
 
 PACKAGES=(
+    ack
+    bat
+    ctags
+    docker
+    dockutil
+    exa
+    fzf
+    gdal
+    gh
+    graphviz
+    hatch
+    htop
+    jags
+    lsd
+    midnight-commander
+    mtr
+    mysql
+    neofetch
+    nmap
     node
+    openssh
+    p7zip
+    pandoc
+    postgresql@14
+    rclone
+    ripgrep
+    spatialindex
+    speedtest-cli
+    starship
+    sundials
+    the_silver_searcher
+    tldr
+    tmux
+    tree
+    unar
+    wget
+    zenith
     zsh-autosuggestions
     zsh-syntax-highlighting
-    howdoi
-    espanso
-    midnight-commander
-    nmap
-    speedtest-cli
-    wget
-    htop
-    ack
-    tmux
-    the_silver_searcher
-    mysql
-    fzf
-    ctags
-    openssh
-    starship
-    bat
-    ripgrep
-    exa
-    gh
-    tldr
-    micro
-    pandoc
-    neofetch
-    rclone
-
-
+    uv
 )
 
 echo "Install packages"
@@ -83,15 +94,13 @@ CASKS=(
     font-jetbrains-mono-nerd-font
     iterm2
     maccy
-    obsidian
     rectangle
     RStudio
     visual-studio-code
     qgis
     quarto
     zotero
-
-
+    ghostty
 )
 
 echo "Installing cask apps..."
@@ -111,12 +120,11 @@ brew install --cask font-Hasklig-nerd-font
 
 echo "Brew install setup completed!"
 
-echo "Intalling Kitty terminal"
-curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-
 echo "Configuring installed packages... ----------------------------------"
 echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 echo 'eval "$(gh completion -s zsh)"' >> ~/.zshrc
 echo 'export STARSHIP_CONFIG=~/.config/starship.toml' >> ~/.zshrc
 echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 echo "source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> $HOME/.zshrc
+echo "creating sym link for qgis to open using `qgis` command"
+ln -s /Applications/QGIS.app/Contents/MacOS/QGIS /usr/local/bin/qgis

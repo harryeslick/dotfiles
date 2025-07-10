@@ -8,3 +8,43 @@ matches:
     replace: "default"
     propagate_case: true
     word: true
+
+  - trigger: "currectly"
+    replace: "correctly"
+    propagate_case: true
+    word: true
+
+  - trigger: "currenly"
+    replace: "currently"
+    propagate_case: true
+    word: true
+
+  - trigger: "seperate"
+    replace: "separate"
+    propagate_case: true
+    word: true
+
+  - trigger: "relevent"
+    replace: "relevant"
+    propagate_case: true
+    word: true
+
+  - trigger: "avaible"
+    replace: "available"
+    propagate_case: true
+    word: true
+
+  - trigger: "envirnment"
+    replace: "environment"
+    propagate_case: true
+    word: true
+
+  - triggers: [innoculum, innoculumn, inoculumn]
+    replace: "inoculum"
+    propagate_case: true
+    word: true
+
+  - triggers: [colum, collum, collumn]
+    replace: "column"
+    propagate_case: true
+    word: true

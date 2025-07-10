@@ -1,5 +1,7 @@
 
-
+# fix error  command not found: compdef
+autoload -U compinit
+compinit
 
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 
@@ -14,7 +16,6 @@ vizshl () {
   vim ~/.zshrc.local
   . ~/.zshrc
 }
-export PATH=$PATH:$CONDA_PREFIX/lib/R
 
 
 eval "$(gh completion -s zsh)"

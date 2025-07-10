@@ -13,7 +13,7 @@ dockutil --no-restart --add "/Applications/RStudio.app"
 # dockutil --no-restart --add "/Applications/Slack.app"
 dockutil --no-restart --add "/Applications/Visual Studio Code.app"
 dockutil --no-restart --add "/Applications/Microsoft Teams.app"
-dockutil --no-restart --add "/Applications/iterm.app"
+dockutil --no-restart --add "/Applications/ghostty.app"
 # dockutil --no-restart --add "/Applications/Microsoft Excel.app"
 # dockutil --no-restart --add "/Applications/Microsoft Word.app"
 

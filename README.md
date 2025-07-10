@@ -12,15 +12,19 @@ The approach used here is from https://developer.atlassian.com/blog/2016/02/best
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Setup the base `config` repo to manage dotfiles
+
+In your home directory create a .env file to add private variable. include
+`EMAIL=<youremail>`
+
 To set this up on your machine, use the script `setup_dotfiles.sh` within this repo.   
 or run:   
-`curl -Lks https://raw.githubusercontent.com/harryeslick/dotfiles/master/setup_dotfiles.sh | /bin/bash`
+`curl -Lks https://raw.githubusercontent.com/harryeslick/dotfiles/master/0_setup_dotfiles.sh | /bin/bash`
 
 This will   
 * git clone the dotfiles repository. 
 * setup the git mechanics to source control selected dotfiles using `config` command
 * config files containing private data should not be commited
-	* to prevent details leaking from .gitconfig or .zshrc, these repos are not tracked. an explicit .gitconfig.public and .zshrc.public are used and sourced in actual .zshrc...
+* to prevent details leaking from .gitconfig or .zshrc, these repos are not tracked. an explicit .gitconfig.public and .zshrc.public are used and sourced in actual .zshrc...
 
 
 # Installing MacOS packages. 

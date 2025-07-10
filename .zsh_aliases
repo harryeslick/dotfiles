@@ -8,8 +8,13 @@ alias bug="gh issue create -l bug -b '' -t"
 alias breaking="gh issue create -l breaking -b '' -t"
 alias note="gh issue -R he00/notes create"
 alias not="echo harry"
-alias ls=exa
-alias tree="exa --tree"
+alias ls='lsd'
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
+# alias ls=exa
+# alias tree="exa --tree"
 alias cat=bat
 
 alias path="echo $PATH | tr ':' '\n'"

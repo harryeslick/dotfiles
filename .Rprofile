@@ -1,4 +1,3 @@
-
 cat("LIBPATHS = ", .libPaths(), "\n")
 cat("R.home() = ", R.home(), "\n")
 cat("pwd = ", getwd(), "\n")
@@ -54,9 +53,9 @@ options(
   # usethis setup -----
   usethis.name = "Harry Eslick",
   usethis.description = list(
-    `Authors@R` = 'person("Harry", "Eslick",
-                     email = "harry.eslick@dpird.wa.gov.au",
-                     role = c("aut", "cre")',
+    `Authors@R` = paste0('person("Harry", "Eslick",
+                     email = "', Sys.getenv("EMAIL"), '",
+                     role = c("aut", "cre"))'),
     License = "MIT + file LICENSE",
     Version = "0.0.0.9000"
   )
