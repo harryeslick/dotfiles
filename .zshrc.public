@@ -1,24 +1,28 @@
 
-# fix error  command not found: compdef
-autoload -U compinit
-compinit
+# Smarter completion initialization
+autoload -Uz compinit
+if [ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)" ]; then
+    compinit
+else
+    compinit -C
+fi
 
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 
 export EDITOR=nano
 
-vizsh () {
-  vim ~/.zshrc
-  . ~/.zshrc
-}
-
-vizshl () {
-  vim ~/.zshrc.local
-  . ~/.zshrc
-}
-
-
 eval "$(gh completion -s zsh)"
 
 source ~/.zsh_aliases
-[ -f ~/.zsh_secrets ] && . ~/.zsh_secrets
+[ -f ~/.zsh.private ] && . ~/.zsh.private
+
+
+# Lazy load SSH agent
+function _load_ssh_agent() {
+    if [ -z "$SSH_AUTH_SOCK" ]; then
+        eval "$(ssh-agent -s)" > /dev/null
+        ssh-add ~/.ssh/id_github_sign_and_auth 2>/dev/null
+    fi
+}
+autoload -U add-zsh-hook
+add-zsh-hook precmd _load_ssh_agent

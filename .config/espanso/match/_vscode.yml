@@ -1,13 +1,14 @@
 matches:
+  - trigger: ":td"
+    replace: "# TODO "
 
   - trigger: "p--"
-    replace: "# %% $|$\t\t\t\t\t\t\t\t\t\t |"
+    replace: "# %% \t\t\t\t\t\t\t\t\t\t |\n"
 
   - trigger: ":md"
     replace: |
       # %% [markdown]
-      # # $|$
-      #
+      # #
 
   - trigger: "p=="
     replace: |
