@@ -14,7 +14,7 @@ export EDITOR=nano
 eval "$(gh completion -s zsh)"
 
 source ~/.zsh_aliases
-[ -f ~/.zsh.private ] && . ~/.zsh.private
+[ -f ~/.zshrc.private ] && . ~/.zshrc.private
 
 
 # Lazy load SSH agent
